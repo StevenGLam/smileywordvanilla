@@ -1,3 +1,24 @@
-.red {
-  background-color: red;
+body {
+  font-family: "Monoton", cursive;
+}
+.colordivs {
+  background-color: red !important;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.5;
+    color: #006aa7;
+    transform: translatey(-500px);
+    transition: all 2s;
+  }
+
+  80% {
+    transform: translateX(110px);
+  }
+
+  100% {
+    opacity: 1;
+    /*   transform translate 0 means it will look how it looks right now*/
+  }
 }

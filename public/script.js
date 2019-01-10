@@ -16,13 +16,12 @@ let charDivs = document.querySelectorAll("div");
 let styleChassis = () => {
   let chassis = document.getElementById("chassis");
   chassis.style.cssText =
-    "background-color:yellow;width:800px;height:400px;margin:50px auto;";
+    "background-color:yellow;width:800px;height:400px;margin:5rem auto; text-align:center";
 
-  let list = charDivs.forEach(
-    el =>
-      (el.style.cssText =
-        "float:left;position:relative;top:50%;width:5rem;height:50px;")
-  );
+  let list = charDivs.forEach(el => {
+    el.style.cssText =
+      "background-color:black;float:left;position:relative;top:50%;width:3rem;height:3rem;text-align:center;border-radius:30%;margin:0 20px;color:#fff;animation:fadein 4s;position:relative;left:25%;top:50%;transform:translate(-50%,-50%)";
+  });
 
   /*chassis.appendChild(charDivs().s).style.cssFloat = "left";
   chassis.appendChild(charDivs().m).style.cssFloat = "left";
@@ -32,15 +31,21 @@ let styleChassis = () => {
   chassis.appendChild(charDivs().y).style.cssFloat = "left"; */
 };
 
-let createS = () => {
-  let circle = document.createElement("DIV");
+let createLetters = () => {
+  let smiley = ["S", "M", "I", "L", "E", "Y"];
+
+  /*  smiley.forEach(el => {
+    let circle = document.createElement("DIV");
+  }); */
+
   let letterDiv = charDivs[0];
-  circle.className = "red";
+  charDivs.forEach(el => {
+    let circle = document.createElement("DIV");
 
-  circle.textContent = "test";
-  circle.style["top"] = "200px";
-
-  letterDiv.appendChild(circle);
+    circle.textContent = "S";
+    circle.style.cssText = "position:relative;font-size:2rem;font-weight:bold";
+    el.appendChild(circle);
+  });
 };
 
 // let createM = () => {
@@ -56,7 +61,7 @@ let createS = () => {
 
 styleChassis();
 
-createS();
+createLetters();
 //createM();
 
 /* let createCircle = letter => {
