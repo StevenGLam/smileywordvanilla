@@ -22,3 +22,10 @@ body {
     /*   transform translate 0 means it will look how it looks right now*/
   }
 }
+
+.circle {
+  display: inline-block; /* You can change this to block if you want one on each line */
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+}

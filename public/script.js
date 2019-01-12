@@ -39,11 +39,11 @@ let createLetters = () => {
   }); */
 
   let letterDiv = charDivs[0];
-  charDivs.forEach(el => {
+  charDivs.forEach((el, i) => {
     let circle = document.createElement("DIV");
 
-    circle.textContent = "S";
     circle.style.cssText = "position:relative;font-size:2rem;font-weight:bold";
+    circle.textContent = smiley[i];
     el.appendChild(circle);
   });
 };
