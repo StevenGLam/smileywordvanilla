@@ -1,31 +1,94 @@
 body {
   font-family: "Monoton", cursive;
+  background: #23074d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #23074d,
+    #cc5333
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #23074d,
+    #cc5333
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  clicktocopy-webkit-animation: bgFade 2s infinite alternate;
 }
-.colordivs {
-  background-color: red !important;
+@keyframes bgFade {
+  0% {
+    background-position: 25% 50px;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: -300px 0;
+  }
 }
-
 @keyframes fadein {
   0% {
     opacity: 0.5;
-    color: #006aa7;
-    transform: translatey(-500px);
-    transition: all 2s;
+    color: black;
+    transform: translatey(500px);
   }
-
   80% {
-    transform: translateX(110px);
+    transform: translatey(-200px);
   }
-
   100% {
-    opacity: 1;
-    /*   transform translate 0 means it will look how it looks right now*/
+    opacity: 1; /* transform translate 0 means it will look how it looks right now */
+  }
+}
+
+@keyframes fadeincircle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 50%;
+  }
+  80% {
+    opacity: 60%;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1; /* transform translate 0 means it will look how it looks right now */
   }
 }
 
 .circle {
-  display: inline-block; /* You can change this to block if you want one on each line */
+  display: inline-block;
+  /* You can change this to block if you want one on each line */
   position: relative;
   font-size: 2rem;
   font-weight: bold;
+}
+
+/* MEDIA QUERY MOBILE */
+@media only screen and (max-width: 600px) {
+  div {
+    /* display: flex;
+    flex-flow: column;
+    justify-content: space-around !important;
+    float: none !important;
+    margin: 0 auto !important;
+    text-align: center;
+    overflow: hidden !important; */
+
+    float: none !important;
+    margin: 1rem auto !important;
+  }
+  #chassis {
+    width: 75% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+  }
+
+  #img1 {
+    position: relative !important;
+    margin: 0 auto !important;
+    top: -1.5rem !important;
+  }
 }
